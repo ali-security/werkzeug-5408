@@ -36,8 +36,8 @@ Create a virtualenv, install your application, then install
     $ cd hello-app
     $ python -m venv venv
     $ . venv/bin/activate
-    $ pip install .  # install your application
-    $ pip install eventlet
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' .  # install your application
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' eventlet
 
 
 Running

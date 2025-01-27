@@ -1,4 +1,5 @@
-[project]
+
+  [project]
 name = "Werkzeug"
 description = "The comprehensive WSGI web application library."
 readme = "README.rst"
@@ -102,3 +103,5 @@ module = [
     "xprocess.*",
 ]
 ignore_missing_imports = true
+
+version = "3.0.1"

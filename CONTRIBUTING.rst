@@ -125,8 +125,8 @@ First time setup in your local environment
 
     .. code-block:: text
 
-        $ python -m pip install -U pip
-        $ pip install -r requirements/dev.txt && pip install -e .
+        $ python -m pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' -U pip
+        $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' -r requirements/dev.txt && pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' -e .
 
 -   Install the pre-commit hooks.
 
@@ -211,7 +211,7 @@ generate a report.
 
 .. code-block:: text
 
-    $ pip install coverage
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' coverage
     $ coverage run -m pytest
     $ coverage html
 

@@ -31,8 +31,8 @@ Create a virtualenv, install your application, then install ``pyuwsgi``.
     $ cd hello-app
     $ python -m venv venv
     $ . venv/bin/activate
-    $ pip install .  # install your application
-    $ pip install pyuwsgi
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' .  # install your application
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' pyuwsgi
 
 If you have a compiler available, you can install the ``uwsgi`` package
 instead. Or install the ``pyuwsgi`` package from sdist instead of wheel.
@@ -40,10 +40,10 @@ Either method will include SSL support.
 
 .. code-block:: text
 
-    $ pip install uwsgi
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' uwsgi
 
     # or
-    $ pip install --no-binary pyuwsgi pyuwsgi
+    $ pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' --no-binary pyuwsgi pyuwsgi
 
 
 Running

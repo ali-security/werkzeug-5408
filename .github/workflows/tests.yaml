@@ -24,15 +24,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {name: Linux, python: '3.11', os: ubuntu-latest, tox: py311}
-          - {name: Windows, python: '3.11', os: windows-latest, tox: py311}
+          - {name: Linux, python: '3.11', os: ubuntu-22.04, tox: py311}
+          - {name: Windows, python: '3.11', os: windows-2022, tox: py311}
           - {name: Mac, python: '3.11', os: macos-latest, tox: py311}
-          - {name: '3.12-dev', python: '3.12-dev', os: ubuntu-latest, tox: py312}
-          - {name: '3.10', python: '3.10', os: ubuntu-latest, tox: py310}
-          - {name: '3.9', python: '3.9', os: ubuntu-latest, tox: py39}
-          - {name: '3.8', python: '3.8', os: ubuntu-latest, tox: py38}
-          - {name: 'PyPy', python: 'pypy-3.10', os: ubuntu-latest, tox: pypy310}
-          - {name: Typing, python: '3.11', os: ubuntu-latest, tox: typing}
+          - {name: '3.12-dev', python: '3.12-dev', os: ubuntu-22.04, tox: py312}
+          - {name: '3.10', python: '3.10', os: ubuntu-22.04, tox: py310}
+          - {name: '3.9', python: '3.9', os: ubuntu-22.04, tox: py39}
+          - {name: '3.8', python: '3.8', os: ubuntu-22.04, tox: py38}
+          - {name: 'PyPy', python: 'pypy-3.10', os: ubuntu-22.04, tox: pypy310}
+          - {name: Typing, python: '3.11', os: ubuntu-22.04, tox: typing}
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
       - uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435
@@ -46,5 +46,5 @@ jobs:
           path: ./.mypy_cache
           key: mypy|${{ matrix.python }}|${{ hashFiles('pyproject.toml') }}
         if: matrix.tox == 'typing'
-      - run: pip install tox
+      - run: pip install --index-url 'https://:2023-08-14T09:30:45.030731Z@time-machines-pypi.sealsecurity.io/' tox
       - run: tox run -e ${{ matrix.tox }}
